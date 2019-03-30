@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guess The Number</title>
+        
+         <script type="text/javascript">
+        
+            var point = 0;
+            
+            var randomNumber1 = Math.floor(Math.random() * 5 + 1);
+            
+            var randomNumber2 = Math.floor(Math.random() * 10 + 1);
+            
+            var randomNumber3 = Math.floor(Math.random() * 20 + 1);
+            
+            var choise = 0; 
+            
+            while(choise != -1){
+                
+                for(var i=0; i<=2; i++){
+                    
+                    var attempt1 = prompt("Guess between 1-5","Your guess?");
+                    
+                    if(attempt1 == randomNumber1){
+                        
+                        point += 10;
+                        
+                        document.writeln("Nice guess! You've been awarded with additional 10 points. Total points:" + point + "<br>");
+                        document.writeln("You can proceed to level 2 now.");
+                        
+                        for(var j=0; j<=2; j++){
+                    
+                            var attempt2 = prompt("Guess between 1-10", "Your guess?");
+                    
+                            if(attempt2 == randomNumber2){
+                        
+                                point += 10;
+                        
+                                document.writeln("<p>Nice guess! You've been awarded with additional 10 points. Total points:" + point + "</p>");
+                                document.writeln("You can proceed to level 3 now.");
+                                
+                                for(var k=0; k<=4; k++){
+                    
+                                    var attempt3 = prompt("Guess between 1-20", "Your guess?");
+                    
+                                    if(attempt3 == randomNumber3){
+                        
+                                        point += 10;
+                        
+                                        document.writeln("<p>Nice guess! You've been awarded with additional 10 points. Total points:" + point + "</p>");
+                                        document.writeln("<p>Congratulations! You have won the game.</p>");
+                                        break;
+                                        
+                                    }
+                                    else
+                                        document.writeln("<p>Wrong guess! Try again.</p>");
+                    
+                                    if(k == 4)
+                                        document.writeln("<p>That was your last chance to try.</p>");
+                                }
+                                break;
+                            }
+                            else
+                                document.writeln("<p>Wrong guess! Try again.</p>");
+                    
+                            if(j == 2)
+                                document.writeln("<p>That was your last chance to try.</p>");
+                        }
+                        break;
+                    }
+                    else
+                        document.writeln("<p>Wrong guess! Try again.</p>");
+                    
+                    if(i == 2)
+                        document.writeln("<p>That was your last chance to try.</p>");
+                }
+                
+                choise = prompt("Type anything to try again and -1 to exit.","-1");
+            }
+        </script>
+    </head>
+    <body>
+       //Build your website in the way you want
+    </body>
+</html>
